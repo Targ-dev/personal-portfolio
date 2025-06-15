@@ -80,17 +80,11 @@ const Portfolio = () => {
               </div>
               <div className="lg:hidden absolute bottom-4 w-full px-3 flex justify-end">
                 <a
-                  href="#" target="_blank" rel="noopener noreferrer"
+                  href="https://github.com/Targ-dev/personal-portfolio" target="_blank" rel="noopener noreferrer"
                   className="bg-[#232323c8] text-white px-3 py-2 rounded-full text-sm shadow-md"
                 >
                   View Project
                 </a>
-                {/* <a
-                  href="#" target="_blank" rel="noopener noreferrer"
-                  className="bg-[#232323c8] text-white px-3 py-2 rounded-full text-sm shadow-md"
-                >
-                  View Website
-                </a> */}
               </div>
             </div>
 
