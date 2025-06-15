@@ -40,13 +40,13 @@ const Testimonials = () => {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 mx-20 mb-12">
+        <div className="grid grid-cols-1 lg:mx-20 sm:mx-10 mb-12">
           <div className="bg-[#111418] rounded-lg p-8 backdrop-blur-sm hover:bg-opacity-70 transition-all duration-300">
             <div className="w-full flex justify-start mb-4">
               <Quote className="w-8 h-8 text-[#20c997]" />
             </div>
             <blockquote
-              className="text-gray-300 text-base leading-relaxed mb-6 px-10"
+              className="text-gray-300 text-base leading-relaxed mb-6 px-3 md:px-10"
               style={{ fontFamily: "'Lora', serif" }}
             >
               <div className="mb-4">
