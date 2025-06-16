@@ -102,7 +102,7 @@ const About = () => {
               </div>
               <a href="/SACHILVS.pdf" download>
                 <button 
-                  className="bg-[#20c997] text-gray-900 px-6 py-3 rounded-full hover:bg-[#149670] transition-colors mt-6">
+                  className="bg-[#20c997] text-gray-900 px-6 py-3 rounded-full md:hover:bg-[#149670] transition-colors mt-6">
                   <Download className="inline w-4 h-4 mr-2" />
                   Download CV
                 </button>

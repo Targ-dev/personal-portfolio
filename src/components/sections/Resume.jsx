@@ -163,7 +163,7 @@ const skills = [
               <a 
                 href="/SACHILVS.pdf"
                 download
-                className="border border-[#20c997] text-[#20c997] px-8 py-3 rounded-full hover:border-green-400 hover:bg-[#20c997] hover:text-white transition-colors">
+                className="border border-[#20c997] text-[#20c997] px-8 py-3 rounded-full md:hover:border-green-400 md:hover:bg-[#20c997] md:hover:text-white transition-colors">
                 <Download className="inline w-4 h-4 mr-2" />
                 Download CV
               </a>
