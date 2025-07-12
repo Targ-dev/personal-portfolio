@@ -91,19 +91,19 @@ const Contact = () => {
                     <Linkedin className="w-5 h-5" />
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/sachil-v-s/" target="_blank" rel="noopener noreferrer"
+                    href="https://www.instagram.com/the.realmz.of.sachu" target="_blank" rel="noopener noreferrer"
                     className="text-white hover:text-gray-400 hover:scale-110 transition-all duration-200"
                   >
                     <Instagram className="w-5 h-5" />
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/sachil-v-s/" target="_blank" rel="noopener noreferrer"
+                    href="https://www.facebook.com/share/1GgiERx3g5/" target="_blank" rel="noopener noreferrer"
                     className="text-white hover:text-gray-400 hover:scale-110 transition-all duration-200"
                   >
                     <Facebook className="w-5 h-5" />
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/sachil-v-s/" target="_blank" rel="noopener noreferrer"
+                    href="https://github.com/Targ-dev/" target="_blank" rel="noopener noreferrer"
                     className="text-white hover:text-gray-400 hover:scale-110 transition-all duration-200"
                   >
                     <Github className="w-5 h-5" />

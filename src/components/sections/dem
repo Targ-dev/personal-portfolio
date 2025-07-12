@@ -8,8 +8,15 @@ const About = () => {
     projects: 0,
     awards: 0,
   });
+  
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // Trigger animations after component mounts
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 100);
+
     const targets = { experience: 10, clients: 250, projects: 650, awards: 38 };
     const duration = 2000;
     const steps = 60;
@@ -17,59 +24,81 @@ const About = () => {
 
     const intervals = [];
 
-    Object.keys(targets).forEach((key) => {
-      const target = targets[key];
-      const increment = target / steps;
-      let current = 0;
-      let step = 0;
+    // Start counter animations after initial fade-in
+    setTimeout(() => {
+      Object.keys(targets).forEach((key) => {
+        const target = targets[key];
+        const increment = target / steps;
+        let current = 0;
+        let step = 0;
 
-      const interval = setInterval(() => {
-        step++;
-        current = Math.min(current + increment, target);
-        setCounters((prev) => ({
-          ...prev,
-          [key]: Math.floor(current),
-        }));
+        const interval = setInterval(() => {
+          step++;
+          current = Math.min(current + increment, target);
+          setCounters((prev) => ({
+            ...prev,
+            [key]: Math.floor(current),
+          }));
 
-        if (step >= steps) {
-          clearInterval(interval);
-        }
-      }, stepDuration);
+          if (step >= steps) {
+            clearInterval(interval);
+          }
+        }, stepDuration);
 
-      intervals.push(interval);
-    });
+        intervals.push(interval);
+      });
+    }, 500);
 
-    return () => intervals.forEach((interval) => clearInterval(interval));
+    return () => {
+      clearTimeout(timer);
+      intervals.forEach((interval) => clearInterval(interval));
+    };
   }, []);
 
   return (
-    <section id="about" className="min-h-screen bg-[#212529] py-16 lg:py-5 relative z-2">
-      <div className="absolute inset-0   bg-opacity-20"></div>
+    <section id="about" className="min-h-screen bg-[#212529] py-16 lg:py-5 relative z-2 overflow-hidden">
+      <div className="absolute inset-0 bg-opacity-20"></div>
+      
+      {/* Background Animation */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#20c997] rounded-full opacity-5 animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-[#20c997] rounded-full opacity-3 animate-bounce" style={{animationDuration: '3s'}}></div>
+      </div>
+      
       <div className="relative z-10 p-8">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-13">
+          {/* Animated Header */}
+          <div className={`text-center mb-13 transition-all duration-1000 transform ${
+            isVisible ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'
+          }`}>
             <div className="relative">
-              <h1 className="text-[clamp(55px,8vw,150px)] font-bold text-[#6c757d] opacity-10 uppercase">
+              <h1 className="text-[clamp(55px,8vw,150px)] font-bold text-[#6c757d] opacity-10 uppercase transition-all duration-1500 hover:opacity-20">
                 ABOUT ME
               </h1>
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
-                  <h2 className="text-[clamp(25px,2.5vw,36px)] font-bold text-white mb-1 hover:text-[#20c997] transition-colors duration-300">
+                  <h2 className="text-[clamp(25px,2.5vw,36px)] font-bold text-white mb-1">
                     Know Me More
                   </h2>
-                  <div className="w-16 h-0.5 bg-[#20c997] mx-auto"></div>
+                  <div className={`w-16 h-0.5 bg-[#20c997] mx-auto transition-all duration-1000 transform ${
+                    isVisible ? 'scale-x-100' : 'scale-x-0'
+                  }`}></div>
                 </div>
               </div>
             </div>
           </div>
 
+          {/* Main Content Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-            <div className="lg:col-span-2">
-              <h3 className="text-3xl text-white mb-6 font-semibold">
-                I'm <span className="text-[#20c997]">Sachil V S</span>, a Web
+            {/* Left Content - Animated Text */}
+            <div className={`lg:col-span-2 transition-all duration-1000 transform delay-300 ${
+              isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
+            }`}>
+              <h3 className="text-3xl text-white mb-6 font-semibold hover:text-[#20c997] transition-colors duration-300">
+                I'm <span className="text-[#20c997] hover:text-white transition-colors duration-300">Sachil V S</span>, a Web
                 Developer
               </h3>
-              <p className="text-[#ffffff81] mb-6 leading-relaxed hover:text-[#ffffff9c] transition-colors duration-300">
+              <p className="text-[#ffffff7c] mb-6 leading-relaxed hover:text-[#ffffff9c] transition-colors duration-300">
                 I'm a self-driven web development enthusiast making a career transition into tech. 
                 With a background in another field, I've discovered my passion for programming and 
                 committed myself to learning modern web technologies through hands-on practice and 
@@ -83,7 +112,10 @@ const About = () => {
               </p>
             </div>
 
-            <div className="space-y-3">
+            {/* Right Content - Animated Info */}
+            <div className={`space-y-3 transition-all duration-1000 transform delay-500 ${
+              isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
+            }`}>
               <div className="border-b border-gray-700 pb-3 hover:border-[#20c997] transition-colors duration-300 transform hover:scale-105">
                 <span className="text-[#ffffffe2] font-bold">Name:</span>{" "}
                 <span className="text-gray-300">Sachil V S</span>
@@ -96,21 +128,23 @@ const About = () => {
                 <span className="text-[#ffffffe2] font-bold">Age:</span>{" "}
                 <span className="text-gray-300">27</span>
               </div>
-              <div className="transition-colors duration-300 transform hover:scale-105">
+              <div className="hover:text-[#20c997] transition-colors duration-300 transform hover:scale-105">
                 <span className="text-[#ffffffe2] font-bold">From:</span>{" "}
                 <span className="text-gray-300">Kerala, India</span>
               </div>
               <a href="/SACHILVS.pdf" download>
-                <button 
-                  className="bg-[#20c997] text-gray-900 px-6 py-3 rounded-full md:hover:bg-[#149670] transition-all duration-300 mt-6 transform hover:scale-105 hover:shadow-lg hover:shadow-[#20c997]/25 active:scale-95">
-                  <Download className="inline w-4 h-4 mr-2" />
+                <button className="bg-[#20c997] text-gray-900 px-6 py-3 rounded-full md:hover:bg-[#149670] transition-all duration-300 mt-6 transform hover:scale-105 hover:shadow-lg hover:shadow-[#20c997]/25 active:scale-95">
+                  <Download className="inline w-4 h-4 mr-2 transition-transform duration-300 group-hover:animate-bounce" />
                   Download CV
                 </button>
               </a>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          {/* Stats Section - Animated Cards */}
+          <div className={`grid grid-cols-2 md:grid-cols-4 gap-8 text-center transition-all duration-1000 transform delay-700 ${
+            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
             <div className="border-r border-dotted border-gray-700 pr-3 hover:border-[#20c997] transition-all duration-300 transform hover:scale-110 group">
               <div className="text-4xl font-light text-[#ffffff85] mb-2 group-hover:text-[#20c997] transition-colors duration-300">
                 8+
@@ -138,6 +172,32 @@ const About = () => {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+        }
+        
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .animate-fadeInUp {
+          animation: fadeInUp 0.8s ease-out forwards;
+        }
+      `}</style>
     </section>
   );
 };

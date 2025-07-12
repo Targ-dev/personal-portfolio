@@ -57,7 +57,7 @@ const skills = [
               </h1>
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
-                  <h2 className="text-[clamp(25px,2.5vw,36px)] font-bold text-white mb-1">
+                  <h2 className="text-[clamp(25px,2.5vw,36px)] font-bold text-white mb-1 hover:text-[#20c997] transition-colors duration-300">
                     Resume
                   </h2>
                   <div className="w-16 h-0.5 bg-[#20c997] mx-auto"></div>
@@ -68,19 +68,19 @@ const skills = [
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h3 className="text-2xl text-white font-bold mb-8">
+              <h3 className="text-2xl text-white font-bold mb-8 hover:text-[#20c997] transition-colors duration-300">
                 My Education
               </h3>
               <div className="space-y-6">
-                <div className="bg-[#111418] p-6 rounded-lg">
-                  <span className="bg-[#20c997] text-white px-3 py-1 rounded text-sm font-medium">
+                <div className="bg-[#111418] p-6 rounded-lg hover:bg-[#1a1e23] transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-xl hover:shadow-[#20c997]/20 group">
+                  <span className="bg-[#20c997] text-white px-3 py-1 rounded text-sm font-medium group-hover:bg-[#1ba384] group-hover:scale-110 transition-all duration-300">
                     2015 - 2018
                   </span>
-                  <h4 className="text-xl text-white mt-4 mb-2">
+                  <h4 className="text-xl text-white mt-4 mb-2 group-hover:text-[#20c997] transition-colors duration-300">
                     BSc Computer Science
                   </h4>
-                  <p className="text-[#20c997] mb-3">University of Kerala</p>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-[#20c997] mb-3 group-hover:text-[#1ba384] transition-colors duration-300">University of Kerala</p>
+                  <p className="text-gray-300 text-sm group-hover:text-white transition-colors duration-300">
                     Gained a strong foundation in programming, data structures,
                     and computer systems, which sparked my interest in web
                     development.
@@ -90,19 +90,19 @@ const skills = [
             </div>
 
             <div>
-              <h3 className="text-2xl text-white font-bold mb-8">
+              <h3 className="text-2xl text-white font-bold mb-8 hover:text-[#20c997] transition-colors duration-300">
                 Courses & Training
               </h3>
               <div className="space-y-6">
-                <div className="bg-[#111418] p-6 rounded-lg">
-                  <span className="bg-[#20c997] text-white px-3 py-1 rounded text-sm font-medium">
+                <div className="bg-[#111418] p-6 rounded-lg hover:bg-[#1a1e23] transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-xl hover:shadow-[#20c997]/20 group">
+                  <span className="bg-[#20c997] text-white px-3 py-1 rounded text-sm font-medium group-hover:bg-[#1ba384] group-hover:scale-110 transition-all duration-300">
                     2024 - 2025
                   </span>
-                  <h4 className="text-xl text-white mt-4 mb-2">
+                  <h4 className="text-xl text-white mt-4 mb-2 group-hover:text-[#20c997] transition-colors duration-300">
                     Full-Stack Web Development (MERN Stack)
                   </h4>
-                  <p className="text-[#20c997] mb-3">Mashupstack</p>
-                  <p className="text-gray-300 text-sm">
+                  <p className="text-[#20c997] mb-3 group-hover:text-[#1ba384] transition-colors duration-300">Mashupstack</p>
+                  <p className="text-gray-300 text-sm group-hover:text-white transition-colors duration-300">
                     Completed hands-on training in MongoDB, Express.js, React,
                     and Node.js. Built real-world projects and gained practical
                     experience.
@@ -114,7 +114,7 @@ const skills = [
 
           {/* Experience */}
           <div>
-            <h3 className="text-2xl text-white font-bold mb-8">
+            <h3 className="text-2xl text-white font-bold mb-8 hover:text-[#20c997] transition-colors duration-300">
               My Experience
             </h3>
 
@@ -122,15 +122,15 @@ const skills = [
               {achievements.map((item, index) => (
                 <div key={index}>
                   <div className="space-y-6">
-                    <div className="bg-[#111418] p-6 rounded-lg">
-                      <span className="bg-[#20c997] text-white px-3 py-1 rounded text-sm font-medium">
+                    <div className="bg-[#111418] p-6 rounded-lg hover:bg-[#1a1e23] transition-all duration-300 cursor-pointer hover:scale-105 hover:shadow-xl hover:shadow-[#20c997]/25 group hover:-translate-y-1">
+                      <span className="bg-[#20c997] text-white px-3 py-1 rounded text-sm font-medium group-hover:bg-[#1ba384] group-hover:scale-110 transition-all duration-300">
                         {item.year}
                       </span>
-                      <h4 className="text-xl text-white mt-4 mb-2">
+                      <h4 className="text-xl text-white mt-4 mb-2 group-hover:text-[#20c997] transition-colors duration-300">
                         {item.title}
                       </h4>
-                      <p className="text-[#20c997] mb-3">{item.subtitle}</p>
-                      <p className="text-gray-300 text-sm">
+                      <p className="text-[#20c997] mb-3 group-hover:text-[#1ba384] transition-colors duration-300">{item.subtitle}</p>
+                      <p className="text-gray-300 text-sm group-hover:text-white transition-colors duration-300">
                         {item.description}
                       </p>
                     </div>
@@ -142,18 +142,21 @@ const skills = [
 
           {/* Skills */}
           <div>
-            <h3 className="text-2xl text-white mb-8">My Skills</h3>
+            <h3 className="text-2xl text-white mb-8 hover:text-[#20c997] transition-colors duration-300">My Skills</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
               {skills.map((skill, idx) => (
-              <div key={idx}>
-                <div className="flex justify-between mb-2">
-                  <span className="text-white">{skill.name}</span>
+              <div key={idx} className="group cursor-pointer">
+                <div className="flex justify-start mb-2">
+                  <span className="text-white group-hover:text-[#20c997] transition-all duration-300 group-hover:scale-105 group-hover:font-semibold">{skill.name}</span>
+                  {/* <span className="text-gray-400 text-sm opacity-0 group-hover:opacity-100 transition-all duration-300">50%</span> */}
                 </div>
-                <div className="w-full bg-[#111418] rounded-full h-2">
+                <div className="w-full bg-[#111418] rounded-full h-2 hover:bg-[#1a1e23] transition-all duration-300 overflow-hidden relative group-hover:h-3 group-hover:shadow-lg group-hover:shadow-[#20c997]/30">
                   <div
-                    className="bg-[#20c997] h-2 rounded-full transition-all duration-1000"
+                    className="bg-[#20c997] h-full rounded-full transition-all duration-500 hover:bg-[#1ba384] relative overflow-hidden"
                     style={{ width: "50%" }}
-                  ></div>
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 opacity-0 group-hover:opacity-100 group-hover:animate-pulse"></div>
+                  </div>
                 </div>
               </div>
               ))}
@@ -163,9 +166,9 @@ const skills = [
               <a 
                 href="/SACHILVS.pdf"
                 download
-                className="border border-[#20c997] text-[#20c997] px-8 py-3 rounded-full md:hover:border-green-400 md:hover:bg-[#20c997] md:hover:text-white transition-colors">
-                <Download className="inline w-4 h-4 mr-2" />
-                Download CV
+                className="border border-[#20c997] text-[#20c997] px-8 py-3 rounded-full hover:border-green-400 hover:bg-[#20c997] hover:text-white transition-all duration-300 hover:shadow-xl hover:shadow-[#20c997]/40 hover:scale-110 group inline-flex items-center">
+                <Download className="inline w-4 h-4 mr-2 group-hover:animate-bounce" />
+                <span className="group-hover:font-semibold">Download CV</span>
               </a>
             </div>
           </div>
